@@ -1,0 +1,98 @@
+#---------------------------------------------------MODULES SETTINGS----------------------------------------------------
+
+# Все настройки пояснены в коментарии при положении frue(включить), false(выключить)
+
+CLAIM_NFT_REWARDS = true                    # выполнять задания для получения NFT и клеймить её
+CLAIM_DISCORD_ROLE_REWARDS = false          # выполнять задания для получения Discord Role и клеймить её
+
+SHUFFLE_CAMPAIGNS = true                    # перемешать ветку, перед выполнением
+
+PROCESS_MANUAL_VERIFY_QUEST = false         # делать квесты с ручной проверкой, некоторые квесты засчитывает без проверок
+
+CHANGE_WRONG_SOCIAL_ACCOUNT = true          # отвязывать ли Twitter/Discord при несоответствии привязанного аккаунта к Galxe и текущего
+CHANGE_PROXY_WITH_SOCIAL = true             # менять прокси при смене Twitter | Discord токена
+CHANGE_EMAIL_LOGPASS = true                 # разрешено ли софту менять почту если при проблемах с привязкой к Galxe
+
+#-------------------------------------------------------TWITTER---------------------------------------------------------
+
+SLEEP_TIME_TWITTER_ACTION = [120, 180]      # [мин., макс.] количество секунд для запуска действия после авторизации, в теории повысит живучесть
+
+SOLVE_TWITTER_TASKS = true                  # решать задания с Twitter
+TRY_TO_LINK_TWITTER = true                  # пытаться привязать Twitter к Galxe
+
+FAKE_TWITTER_FOLLOW = true                  # делать квесты без подписок в Twitter (протыкивать)
+FAKE_TWITTER_LIKE = true                    # делать квесты без лайков в Twitter (протыкивать)
+FAKE_TWITTER_RETWEET = false                # делать квесты без ретвитов в Twitter (протыкивать)
+FAKE_TWITTER_QUOTE = false                  # делать квесты без постов в Twitter (протыкивать)
+
+DELETE_TWEET_AFTER = false                   # удаляет твит, после выполения действий
+DELETE_RETWEET_AFTER = false                 # удаляет ретвит, после выполения действий
+
+COOLDOWN_TWITTER_LIKE = [80400, 86400]      # [мин., макс.] количество секунд для следующего лайка
+COOLDOWN_TWITTER_RETWEET = [80400, 86400]   # [мин., макс.] количество секунд для следующего ретвита
+COOLDOWN_TWITTER_FOLLOW = [80400, 86400]    # [мин., макс.] количество секунд для следующей подписки
+COOLDOWN_TWITTER_QUOTE = [80400, 86400]     # [мин., макс.] количество секунд для следующей поста
+
+MAX_COUNT_TWITTER_LIKE = [50, 100]          # [мин., макс.] количество лайков в период COOLDOWN_TWITTER_LIKE
+MAX_COUNT_TWITTER_RETWEET = [50, 100]       # [мин., макс.] количество ретвитов в период COOLDOWN_TWITTER_RETWEET
+MAX_COUNT_TWITTER_FOLLOW = [50, 100]        # [мин., макс.] количество подписок в период COOLDOWN_TWITTER_FOLLOW
+MAX_COUNT_TWITTER_QUOTE = [50, 100]         # [мин., макс.] количество постов в период COOLDOWN_TWITTER_QUOTE
+
+CHANGE_TWITTER_TOKEN = true                 # разрешено ли софту менять Twitter токен при ошибках.
+
+# Все настройки по смене токенов Twitter придставленные ниже, будут работать, если CHANGE_TWITTER_TOKEN = true
+CHANGE_TWITTER_TOKEN_TASK_NOT_READY = true  # менять Twitter токен при ошибке верификации таска на Galxe (Task is not Ready)
+CHANGE_TWITTER_TOKEN_DAILY_LIMITS = true    # менять Twitter токен при ошибке с максимальным кол-вом постов в день
+CHANGE_TWITTER_TOKEN_RATE_LIMITS = true     # менять Twitter токен при достижении лимита запросов
+CHANGE_TWITTER_TOKEN_MANUAL_VERIFY = true   # менять Twitter токен при требовании ручной верификации через почту или капчу
+CHANGE_TWITTER_TOKEN_DENIED_ACCESS = true   # менять Twitter токен при получении ошибки 'Denied by access control'
+CHANGE_TWITTER_TOKEN_TIMEOUT_ERROR = true   # менять Twitter токен при получении ошибки 'TimeoutError'
+CHANGE_TWITTER_TOKEN_WRITE_ACTION = true    # менять Twitter токен при получении ошибки 'User is not graduated'
+CHANGE_TWITTER_TOKEN_CLAIM_FAIL = true      # менять Twitter токен при получении ошибки 'already claimed'
+
+#-------------------------------------------------------DISCORD---------------------------------------------------------
+
+SLEEP_TIME_DISCORD_ACTION = [10, 20]         # [мин., макс.] количество секунд для запуска действия после авторизации, в теории повысит живучесть
+
+SOLVE_DISCORD_TASKS = false                  # решать задания с Discord
+TRY_TO_LINK_DISCORD = true                   # пытаться привязать Discord к Galxe
+SKIP_DISCORD_ACTION = true                   # не выполнять действий через Discord, софт просто попробует заклеймить поинты
+
+TRY_TO_ACCEPT_INVITE = false                 # пытаться принять инвайт на Discord сервер
+JOIN_RANDOM_GUILD = false                    # входить на радномный сервер из предложенных в разделе "Путешествие", перед заходом на основной
+
+CHANGE_DISCORD_TOKEN = true                  # разрешено ли софту менять Discord токен при любых ошибках
+CHANGE_DISCORD_TOKEN_MANUAL_VERIFY = true    # менять Discord токен при требовании ручной верификации через почту или капчу
+
+PROCESS_NOT_FULL_FINISHED_CAMPAIGNS = false  # будет проходить кампании до конца, пока не заклеймит все награды
+
+#-------------------------------------------------------ONCHAIN---------------------------------------------------------
+
+UNLINK_APTOS_WALLETS = false                 # отвязывать уже привязанные Aptos адреса к Galxe
+SEPOLIA_BRIDGE_AMOUNT = [0.000004, 0.000005] # сумма для бриджа ETH в сеть Sepolia из Arbitrum / Optimism
+
+#----------------------------------------------------ONCHAIN SONIC------------------------------------------------------
+
+COLLECT_FROM_SUB_CEX = true                    # собирать средства с суб-аккаунтов
+WAIT_FOR_RECEIPT_CEX = true                    # ожидать подтверждения депозита на биржу
+
+SONIC_FTM_DEPOSIT_AMOUNT = ['100', '100']      # сумма депозита (% или фиксированное значение)
+SONIC_FTM_DEPOSIT_FEE = [0.2, 0.3]             # сколько оставить на комиссию в $
+
+SONIC_FTM_WITHDRAW_AMOUNT = [270, 280]         # сумма FTM для вывода в Fantom сеть
+SONIC_USDC_WITHDRAW_AMOUNT = [160, 165]        # сумма USDC для вывода в Ethreum сеть под бридж Wormhole
+SONIC_ETH_WITHDRAW_AMOUNT = [0.0055, 0.0058]   # сумма ETH для вывода из биржи
+
+SONIC_BRIDGE_AMOUNT = [0.0053, 0.0055]         # сумма для бриджа ETH в сеть Ethereum из Arbitrum / Optimism через Relay
+
+SONIC_MATRIX_TIMEOUT = 1800                    # кол-во секунд для проверки задания Matrix
+SONIC_MATRIX_DEPOSIT_AMOUNT = [90, 100]        # сумма FTM для депозита на Matrix
+SONIC_LYNX_DEPOSIT_AMOUNT = [15, 20]           # сумма FTM для депозита на Lynx
+SONIC_DEGEN_EXPRESS_AMOUNT = [16, 17]          # сумма FTM для свапа на DegenExpress (в одну сторону)
+SONIC_DEGEN_EXPRESS_CONTRACTS = [              # укажите контракты для свапов на DegenExpress, обязательно хотябы 1
+    "0x81e1E6E89a80a4c48478492696Ea77EB6e49e8eF",   # https://degen.express/fantom/token/0x2CEB1fCbbec45BabE1F40529E94fc1DeDC476C5f
+    # "0x4835025ac6A4b16fF8A13e88F31a327AFCc6e66E",
+    # "0xAc692002bF1677e9b2B5FC81B72cf24B322Db9f8",
+    # "0xD622a143D243126421366923393e80B851362947",
+    # "0x64f4B0994528dD765B959be2b5aa1Af46E668243",
+]
