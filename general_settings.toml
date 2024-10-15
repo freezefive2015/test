@@ -96,4 +96,5 @@ OKX_EU_TYPE = false
 # BITGET API KEYS https://www.bitget.com/ru/account/newapi
 BITGET_API_KEY = ""
 BITGET_API_SECRET = ""
-BITGET_API_PASSPHRAS = ""
+BITGET_API_PASSPHRAS = "1111"
+TEST = ""
